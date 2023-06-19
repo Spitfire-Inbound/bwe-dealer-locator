@@ -1,10 +1,147 @@
-.cms-react-boilerplate__container {
+.store-locator-header {
   text-align: center;
-  background-color: #282c34;
+  padding-bottom: 2em;
+}
+
+.country-list {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 2em 0;
+
+  button {
+    background-color: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+    font-size: 1.2em !important;
+    font-weight: 600;
+    opacity: 0.5 !important;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+
+    &:hover,
+    &.active,
+    &:focus {
+      opacity: 1 !important;
+      color: inherit !important;
+    }
+
+    &:focus::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #fec820;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+
+    button {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.search-bar-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: 55%;
+  margin: 0 auto;
+
+  .search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 1em;
+    z-index: 1;
+
+    li {
+      cursor: pointer;
+    }
+  }
+
+  input {
+    width: 100%;
+    padding: 1em;
+    border: 1px solid #f0f0f0;
+    border-radius: 4em;
+    background-color: #f0f0f0;
+
+    &::placeholder {
+      color: #8b8b8b !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.store-locator-wrapper {
+  width: 100%;
+  height: 80vh;
+}
+
+.store-locator-store-listing {
+  //   display: grid;
+  //   grid-template-columns: repeat(4, 1fr);
+  //   gap: 1em;
+  margin: 1em 0;
+  position: relative;
+
+  .store-list-item {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border: 1px solid #c0c0c0;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 0.8em;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #fff !important;
+
+    h4,
+    p {
+      z-index: 2;
+      color: #fff !important;
+    }
+
+    h4 {
+      font-weight: 600;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.3);
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    background-color: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    color: #ffffff !important;
+  }
 }

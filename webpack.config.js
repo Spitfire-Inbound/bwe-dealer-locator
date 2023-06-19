@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 
-
 const hubspotConfig = ({ portal, autoupload } = {}) => {
   return {
     target: 'web',
@@ -16,7 +15,7 @@ const hubspotConfig = ({ portal, autoupload } = {}) => {
       filename: '[name].js',
     },
     optimization: {
-      minimize: false,
+      minimize: true,
     },
     module: {
       rules: [
@@ -46,6 +45,10 @@ const hubspotConfig = ({ portal, autoupload } = {}) => {
             },
           ],
         },
+        {
+          test: /\.css$/i,
+          use: ['style-loader', 'css-loader'],
+        },
       ],
     },
     plugins: [
@@ -53,7 +56,7 @@ const hubspotConfig = ({ portal, autoupload } = {}) => {
         portal,
         autoupload,
         src: 'dist',
-        dest: 'cms-react-boilerplate',
+        dest: 'dealer-locator',
       }),
       new MiniCssExtractPlugin({
         filename: '[name].css',

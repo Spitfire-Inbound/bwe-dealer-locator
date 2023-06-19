@@ -1,13 +1,27 @@
 [
   {
-    "default": 0,
-    "min": 0,
-    "max": 100,
-    "display": "slider",
-    "label": "Starting number of reasons",
-    "locked": false,
-    "name": "initial_count",
+    "name": "default_zoom",
+    "label": "Default Zoom",
     "required": false,
-    "type": "number"
+    "locked": false,
+    "display": "slider",
+    "min": 1,
+    "max": 14,
+    "step": 1,
+    "type": "number",
+    "prefix": "",
+    "suffix": "",
+    "default": 6
+  },
+  {
+    "name": "default_center",
+    "label": "Default Center",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "default": "-30.5595,22.9375"
   }
 ]
