@@ -23,5 +23,16 @@
     "show_emoji_picker": false,
     "type": "text",
     "default": "-30.5595,22.9375"
+  },
+  {
+    "name": "api_key",
+    "label": "API Key",
+    "required": false,
+    "locked": false,
+    "validation_regex": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "default": ""
   }
 ]

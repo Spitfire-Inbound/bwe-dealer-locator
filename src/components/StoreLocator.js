@@ -33,7 +33,7 @@ const options = {
 
 const StoreLocator = ({ moduleData }) => {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyANXqfdp0NSpOVfKb1X6aAtbOrdwPTqhUY', // Your Google Maps API Key
+    googleMapsApiKey: moduleData.api_key,
     libraries,
   });
 
